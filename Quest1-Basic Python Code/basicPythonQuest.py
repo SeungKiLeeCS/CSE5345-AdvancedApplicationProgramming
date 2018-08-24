@@ -11,9 +11,11 @@ def isSorted(list):
     >>> isSorted(['a','z','b','c'])  -> False
     constraint: MAY NOT USE: sorted( ) function or sort library
     """
+
+    for i in range (len(list)-1):
+        if list[i] > list[i+1]:
+            return False
     return True
-
-
 
 def isSortedAndUnique(list):
     """ return boolean depending on if list sorted
@@ -22,8 +24,7 @@ def isSortedAndUnique(list):
     >>> isSortedAndUnique(['a','z','b','b','c'])  -> False
     constraint: MAY NOT USE: set
     """
-    return True
-
+    return isSorted(list) and hasUniqueValues(list)
 
 def hasUniqueValues(list):
     """ return boolean depending on if list has unique values
@@ -32,8 +33,7 @@ def hasUniqueValues(list):
     >>> hasUniqueValues(['a','z','b','b','c'])  -> False
     constraint: MAY NOT USE: set
     """
-    return True
-
+    return len({}.fromkeys(list)) == len(list)
 
 def genSortedArrayUniqueValues(list):
     """ return sorted version of list without duplicates
@@ -41,8 +41,13 @@ def genSortedArrayUniqueValues(list):
     >>> genSortedArrayUniqueValues(['a','b','z','c', 'a'])  -> ['a','b','c','z']
     constraint: MAY NOT USE: set
     """
-    return []
 
+    return_list = []
+    
+    for key in {}.fromkeys(list):
+        return_list.append(key)
+    
+    return sorted(return_list)
 
 def listToMapTwoByTwo(list):
     """ return a map based on the order of list elements.
@@ -50,7 +55,15 @@ def listToMapTwoByTwo(list):
     >>> listToMapTwoByTwo(['a',2, 3,'foo'])  ->  {"a":2,3:'foo'}
     >>> listToMapTwoByTwo([])  -> {}
     """
-    return {"foo": "baz"}
+
+    return_dict = {}
+    
+    if len(list) > 1:
+        for i in range (len(list)-1):
+            if i%2 == 0:
+                return_dict[list[i]] = list[i+1]
+    
+    return return_dict    
 
 def wordsInStringToDictWordCount(s):
     """ return a dict of words in string and count
@@ -58,16 +71,30 @@ def wordsInStringToDictWordCount(s):
     >>> wordsInStringToDictWordCount('') -> {}
     constraint: MAY NOT USE: Counter
     """
-    return {"foo": 2, "bar": 1}
 
+    return_dict = {}
+
+    if len(str) > 1:        
+        temp_list = str.split()
+        
+        for i in temp_list:
+            if i in return_dict:
+                return_dict[i] += 1
+            else:
+                return_dict[i] = 1
+                
+    return return_dict
 
 def reverseWordsInString(string):
     """ return a string with words reversed with one space separators
     >>> reverseWordsInString('foo bar bar baz') -> 'baz bar bar foo'
     constraint: MAY NOT USE: list.reverse()
     """
-    return "foo"
 
+    temp_list = str.split()
+    temp_list = temp_list[::-1]
+    
+    return ' '.join(temp_list)
 
 
 def genListOfOverlaps(list1, list2):
@@ -76,23 +103,45 @@ def genListOfOverlaps(list1, list2):
     >>> genListOfOverlaps([2,4,6,8],[2,4,6,8]) -> [2,4,6,8]
     >>> genListOfOverlaps([2,4,6,8],[1,1,9,7]) -> []
     """
-    return []
 
+    return_list = []
+    temp_dict = {}
+    
+    for i in list1:
+        if i not in temp_dict:
+            temp_dict[i] = 1
+    for i in {}.fromkeys(list2):
+        if i in temp_dict:
+            temp_dict[i] += 1
+        else:
+            temp_dict[i] = 1
+
+    for key in temp_dict:
+        if temp_dict[key] == 2:
+            return_list.append(key)
+            
+    return return_list
 
 def removeDupsNoSet(list):
     """ remove duplicates in the list without using Python Set
     >>> removeDupsNoSet([1,1,2,2,5,6]) -> [1,2,5,6]
     constraint: MAY NOT USE: set
     """
-    return []
 
+    return_list = []
+    
+    for i in {}.fromkeys(list):
+        return_list.append(i)
+    
+    return return_list
 
 def removeDupsUseSet(list):
     """ remove duplicates in the list  using Python Set
     >>> removeDupsUseSet([1,1,2,2,5,6]) -> [1,2,5,6]
     constraint: MUST USE: set
     """
-    return []
+
+    return list(set(list1))
 
 if __name__ == '__main__':
     #write your own test code here
