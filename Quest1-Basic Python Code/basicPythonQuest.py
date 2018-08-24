@@ -85,7 +85,7 @@ def wordsInStringToDictWordCount(str):
                 
     return return_dict
 
-def reverseWordsInString(string):
+def reverseWordsInString(str):
     """ return a string with words reversed with one space separators
     >>> reverseWordsInString('foo bar bar baz') -> 'baz bar bar foo'
     constraint: MAY NOT USE: list.reverse()
