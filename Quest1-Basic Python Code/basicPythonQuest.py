@@ -65,7 +65,7 @@ def listToMapTwoByTwo(list):
     
     return return_dict    
 
-def wordsInStringToDictWordCount(s):
+def wordsInStringToDictWordCount(str):
     """ return a dict of words in string and count
     >>> wordsInStringToDictWordCount('foo bar   bar') -> {'foo':1, 'bar':2}
     >>> wordsInStringToDictWordCount('') -> {}
@@ -135,7 +135,7 @@ def removeDupsNoSet(list):
     
     return return_list
 
-def removeDupsUseSet(list):
+def removeDupsUseSet(list1):
     """ remove duplicates in the list  using Python Set
     >>> removeDupsUseSet([1,1,2,2,5,6]) -> [1,2,5,6]
     constraint: MUST USE: set
