@@ -2,8 +2,8 @@
 
 import re, pytest
 
-__STUDENT_ID__  = "00006666"        # replace with your 8 digit student id
-__CODING_NAME__ = "Zondo"           # replace with your coding name - max 15 characters
+__STUDENT_ID__  = "00000000"        # replace with your 8 digit student id
+__CODING_NAME__ = "MonsterPeach"           # replace with your coding name - max 15 characters
 
 def count_vowels(mystr):
     """return the number of vowels, upper and lowercase a,e,i,o,u in the string
@@ -110,6 +110,6 @@ def readurlCountValidPhoneNumbers(urlname):
 
 if __name__  == '__main__':
     print ("To test your code execute: python test_QuestFilesUrls.py  or on command line execute: pytest ")
-
+    print ("Change the Student ID before submission")
 
 

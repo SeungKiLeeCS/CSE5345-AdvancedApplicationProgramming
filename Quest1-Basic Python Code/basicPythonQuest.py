@@ -146,3 +146,4 @@ def removeDupsUseSet(list1):
 if __name__ == '__main__':
     #write your own test code here
     print ('ready to go')
+    print ("Change the Student ID before submission")
