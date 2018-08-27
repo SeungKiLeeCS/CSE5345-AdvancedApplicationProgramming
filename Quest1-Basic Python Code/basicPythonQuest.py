@@ -120,7 +120,7 @@ def genListOfOverlaps(list1, list2):
         if temp_dict[key] == 2:
             return_list.append(key)
             
-    return return_list
+    return sorted(return_list)
 
 def removeDupsNoSet(list):
     """ remove duplicates in the list without using Python Set
