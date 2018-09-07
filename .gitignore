@@ -5,6 +5,9 @@
 */.ipynb_checkpoints/*
 .tex
 
+*/.pdf
+
+
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
 #
@@ -129,5 +132,6 @@ venv.bak/
 pyvenv.cfg
 pip-selfcheck.json
 
+.pdf
 
 # End of https://www.gitignore.io/api/python,jupyternotebook
