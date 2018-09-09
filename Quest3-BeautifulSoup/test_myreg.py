@@ -89,5 +89,3 @@ def test_final():
 if __name__ == '__main__':
     print("Testing my_regex.py")
     pytest.main()
-    
-
