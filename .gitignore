@@ -7,8 +7,8 @@
 
 */.pdf
 *.pdf
-*/.png
-*.png
+# */.png
+# *.png
 *.csv
 *.json
 # Remove previous ipynb_checkpoints
