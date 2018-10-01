@@ -1,9 +1,12 @@
 import pymongo
 import json
-from pymongo import MongoClient as mc
+from pymongo import MongoClient
 
-client = mc("mongo smgo7db01.smu.edu:27017 -u seungkil -p hu44kWb5 --authenticationDatabase seungkildb")
+client = MongoClient("mongodb://seungkil:hu44kWb5@smgo7db01.smu.edu:27017/")
 
-member = client["Member"]
+db = client['seungkildb']
+# member = db["Member"]
 
-print(member.find())
+# member.find({'name': "Hirate Yurina"})
+
+print(client.list_database_names())
