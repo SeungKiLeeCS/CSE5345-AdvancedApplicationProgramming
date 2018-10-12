@@ -1,0 +1,37 @@
+db.league.insert([
+    {
+        "name":   "LCK",
+        "region": "KR",
+        "rank":   1
+    }, {
+        "name":   "LPL",
+        "region": "CN",
+        "rank":   2
+    }, {
+        "name":   "LMS",
+        "region": "TW",
+        "rank":   3
+    }, {
+        "name":   "LCS-EU",
+        "region": "EU",
+        "rank":   4
+    }, {
+        "name":   "LCS-NA",
+        "region": "NA",
+        "rank":   5
+    }
+])
+
+db.team.insert([
+    {
+        "name":    "SKT T1",
+        "players": ["Faker, Bang, Wolf"],
+        "coaches": ["Kkoma"],
+        "last_season_rank": 1
+    }, {
+        "name":    "Gen.G",
+        "players": ["Crown, Ruler, CoreJJ"],
+        "coaches": ["Choi"],
+        "last_season_rank": 2
+    }
+])
